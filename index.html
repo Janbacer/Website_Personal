@@ -1,0 +1,834 @@
+<!DOCTYPE html>
+<!--
+  ====================================================
+    Jan Balayla Ceres :: Personal Homepage
+    Hand-coded HTML. No frames. No Flash. No cookies.
+    Best viewed at 800x600 (or on anything, really).
+
+    To add a photo: upload "me.jpg" next to this file.
+    To add a CV link: upload "cv.pdf" next to this file.
+  ====================================================
+-->
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Jan Balayla Ceres :: Homepage</title>
+<meta name="description" content="Personal homepage of Jan Balayla Ceres: Mathematical Engineering in Data Science at UPF Barcelona, Informatics at TUM Munich, research on physics-informed neural networks.">
+<meta name="keywords" content="Jan Balayla Ceres, UPF, TUM, data science, informatics, physics-informed neural networks, scramjet, CFD, PyTorch, Barcelona, Munich">
+<meta name="author" content="Jan Balayla Ceres">
+<meta name="generator" content="Notepad (in spirit)">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Crect width='16' height='16' fill='%23c0c0c0'/%3E%3Cpath d='M0 0h16v1H1v15H0z' fill='%23fff'/%3E%3Cpath d='M15 1h1v15H0v-1h15z' fill='%23808080'/%3E%3Ctext x='8' y='12.5' font-family='Times New Roman,serif' font-weight='bold' font-size='12' text-anchor='middle' fill='%23000080'%3EJ%3C/text%3E%3C/svg%3E">
+<style>
+/* Layout: one centered 820px "page" on flat Netscape grey. Left navigation column plus content
+   column, bevelled like Windows 98, collapsing to a single column on phones. */
+:root{
+  --grey:#c0c0c0;
+  --hi:#ffffff;
+  --light:#dfdfdf;
+  --shadow:#808080;
+  --dark:#000000;
+  --ink:#000000;
+  --paper:#ffffff;
+  --navy:#000080;
+  --navy2:#1084d0;
+  --link:#0000ee;
+  --visited:#551a8b;
+  --hot:#ff0000;
+  --purple:#800080;
+  --green:#008000;
+  --red:#c00000;
+  --red2:#e00000;
+  --sky:#7fb2ff;
+  --led:#00ff00;
+  --caution:#ffd800;
+  --gold:#ffcc00;
+  --gold-dark:#b8860b;
+  --ball:#ff2020;
+  --ball-dark:#6a0000;
+  --odo1:#3a3a3a;
+  --odo2:#1a1a1a;
+  --wa1:#fff600;
+  --wa2:#ffae00;
+  --wa3:#ff3c00;
+  --wa4:#a80000;
+
+  --serif:"Times New Roman",Times,"Liberation Serif","Nimbus Roman",serif;
+  --ui:Verdana,Tahoma,"DejaVu Sans",Geneva,sans-serif;
+  --arial:Arial,Helvetica,"Liberation Sans",sans-serif;
+  --display:"Arial Black","Arial Bold",Gadget,Impact,sans-serif;
+  --comic:"Comic Sans MS","Comic Neue","Chalkboard SE",cursive;
+  --mono:"Courier New",Courier,"Liberation Mono",monospace;
+
+  --raised:inset -1px -1px var(--dark),inset 1px 1px var(--hi),inset -2px -2px var(--shadow),inset 2px 2px var(--light);
+  --sunken:inset -1px -1px var(--hi),inset 1px 1px var(--shadow),inset -2px -2px var(--light),inset 2px 2px var(--dark);
+  color-scheme:light;
+}
+
+*,*::before,*::after{box-sizing:border-box}
+[hidden]{display:none!important}
+html{background:var(--grey)}
+body{margin:0;padding:12px 16px 28px;background:var(--grey);color:var(--ink);font:16px/1.45 var(--serif)}
+#page{max-width:820px;margin:0 auto}
+a{color:var(--link);overflow-wrap:anywhere}
+a:visited{color:var(--visited)}
+a:hover,a:active{color:var(--hot)}
+:focus-visible{outline:1px dotted var(--ink);outline-offset:2px}
+img{max-width:100%}
+p{margin:0 0 10px}
+small{font-size:.82em}
+.center{text-align:center}
+hr{height:0;border:0;border-top:1px solid var(--shadow);border-bottom:1px solid var(--hi);margin:14px 0}
+hr.fat{border-top-width:2px;border-bottom-width:2px}
+.noscript{margin:0 0 10px;padding:6px 10px;background:var(--caution);color:var(--ink);border:1px solid var(--dark);font:bold 13px/1.4 var(--ui);text-align:center}
+
+/* ---------- masthead ---------- */
+.masthead{text-align:center;padding-top:4px}
+.welcome{margin:0 0 6px;font:bold 17px/1.3 var(--comic);color:var(--purple)}
+.wordart{margin:0;padding:0 .12em;font-family:var(--display);font-weight:900;font-style:italic;
+  font-size:clamp(32px,9vw,60px);line-height:1.1;letter-spacing:.01em;text-wrap:balance;
+  background:linear-gradient(180deg,var(--wa1) 0%,var(--wa2) 42%,var(--wa3) 58%,var(--wa4) 100%);
+  background-size:100% 1.1em;
+  -webkit-background-clip:text;background-clip:text;color:transparent;
+  filter:drop-shadow(3px 3px 0 var(--navy))}
+@supports not ((-webkit-background-clip:text) or (background-clip:text)){
+  .wordart{background:none;color:var(--red)}
+}
+.tagline{margin:10px 0 0;font:bold 14px/1.5 var(--ui);color:var(--navy)}
+.tagline .nw{white-space:nowrap}
+.br-phone{display:none}
+
+/* ---------- LED ticker ---------- */
+.ticker{margin:14px 0 0;padding:5px 7px;background:var(--dark);color:var(--led);font:bold 17px/1.3 var(--mono);box-shadow:var(--sunken)}
+.ticker marquee,.ticker .static{display:block}
+
+/* ---------- two-column layout table ---------- */
+table.layout{width:100%;margin-top:14px;border-collapse:collapse;table-layout:fixed}
+table.layout td{vertical-align:top;padding:0}
+td.side{width:196px;padding-right:14px!important}
+
+/* ---------- bevelled side panels ---------- */
+.panel{margin:0 0 14px;padding:4px 4px 8px;background:var(--grey);box-shadow:var(--raised)}
+.panel-title{margin:0 0 8px;padding:2px 6px;background:linear-gradient(90deg,var(--navy),var(--navy2));color:var(--hi);font:bold 12px/1.5 var(--ui);letter-spacing:.02em}
+.panel-body{padding:0 6px;font:12px/1.5 var(--ui)}
+.panel-body p{margin:0 0 6px}
+.photo{padding-top:8px;text-align:center}
+.photo-frame{display:inline-block;padding:4px;background:var(--paper);box-shadow:var(--sunken)}
+.photo-frame img,.photo-frame svg{display:block;width:150px;max-width:100%;height:auto}
+.photo-caption{margin:6px 0 0;font:11px/1.4 var(--ui)}
+.nav{list-style:none;margin:0;padding:0 6px;font:13px/1.4 var(--ui)}
+.nav li{margin:0 0 5px}
+.nav a::before{content:"\00BB\00A0"}
+
+.counter{display:inline-flex;gap:2px;padding:3px;background:var(--dark);box-shadow:0 0 0 1px var(--shadow)}
+.counter span{display:inline-block;min-width:15px;padding:2px 0;text-align:center;font:bold 17px/1 var(--mono);color:var(--hi);
+  background:linear-gradient(180deg,var(--odo1) 0%,var(--odo2) 48%,var(--dark) 52%,var(--odo1) 100%)}
+
+.construction{padding:4px}
+.tape{height:12px;background:repeating-linear-gradient(-45deg,var(--caution) 0 8px,var(--dark) 8px 16px);animation:tape 1.2s linear infinite}
+@keyframes tape{to{background-position:22.63px 0}}
+.construction-sign{display:flex;align-items:center;justify-content:center;gap:8px;padding:7px 2px;font:bold 11px/1.25 var(--ui);text-align:center}
+.construction-sign svg{flex:none;width:24px;height:28px}
+.construction .panel-body{padding-top:6px;text-align:center}
+
+/* ---------- Windows 98 buttons and inputs ---------- */
+.btn{font:12px/1 var(--ui);color:var(--ink);background:var(--grey);border:0;border-radius:0;padding:7px 12px;min-height:26px;box-shadow:var(--raised);cursor:pointer}
+.btn:active{box-shadow:var(--sunken);padding:8px 11px 6px 13px}
+.btn:focus-visible{outline:1px dotted var(--ink);outline-offset:-5px}
+input[type=text],input[type=email],select,textarea{width:100%;font:15px/1.3 var(--serif);color:var(--ink);background:var(--paper);border:0;border-radius:0;padding:5px 6px;box-shadow:var(--sunken)}
+textarea{min-height:100px;resize:vertical}
+fieldset{margin:0;padding:10px 12px 12px;border:1px solid var(--shadow);box-shadow:1px 1px 0 var(--hi),inset 1px 1px 0 var(--hi)}
+legend{padding:0 4px;font:bold 13px var(--ui)}
+.form-grid{display:grid;grid-template-columns:max-content minmax(0,1fr);gap:8px 10px;align-items:center}
+.form-grid label{font:12px/1.4 var(--ui)}
+.form-grid .top{align-self:start;padding-top:6px}
+.form-actions{display:flex;flex-wrap:wrap;gap:8px;margin-top:12px}
+.status{margin:12px 0 0;padding:7px 9px;background:var(--paper);box-shadow:var(--sunken);font:12px/1.5 var(--ui)}
+
+/* ---------- content ---------- */
+.section{margin:0 0 28px;scroll-margin-top:8px}
+h2.bar{margin:0 0 12px;padding:3px 8px;background:linear-gradient(90deg,var(--navy),var(--navy2));color:var(--hi);font:bold 15px/1.4 var(--ui);letter-spacing:.03em}
+h3{margin:0;font:bold 18px/1.3 var(--serif)}
+h3 small{font-weight:normal;font-style:italic}
+.sub{margin:16px 0 6px;font:bold 13px/1.4 var(--ui);color:var(--navy);text-decoration:underline}
+.entry{margin:0 0 18px}
+.entry-head{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:baseline;gap:0 14px}
+.entry-when{font:12px/1.6 var(--ui);color:var(--navy);white-space:nowrap}
+.entry-where{margin:0 0 4px;font-style:italic}
+
+ul.balls{list-style:none;margin:6px 0 10px;padding-left:22px}
+ul.balls li{position:relative;margin:0 0 5px;break-inside:avoid}
+ul.balls li::before{content:"";position:absolute;left:-17px;top:.42em;width:10px;height:10px;border-radius:50%;
+  background:radial-gradient(circle at 35% 30%,var(--hi) 0 8%,var(--ball) 38%,var(--ball-dark) 100%)}
+ul.stars{list-style:none;margin:6px 0 10px;padding-left:26px}
+ul.stars li{position:relative;margin:0 0 7px}
+ul.stars li::before{content:"\2605";position:absolute;left:-24px;top:-.08em;color:var(--gold);font-size:1.15em;text-shadow:1px 1px 0 var(--dark)}
+.cols{columns:2 13em;column-gap:26px}
+
+.tablewrap{overflow-x:auto;margin:0 0 10px}
+table.classic{width:100%;border-collapse:separate;border-spacing:2px;padding:2px;background:var(--grey);box-shadow:var(--raised);font-size:15px}
+table.classic th,table.classic td{padding:4px 7px;text-align:left;vertical-align:top;box-shadow:inset 1px 1px 0 var(--shadow),inset -1px -1px 0 var(--hi)}
+table.classic th{font:bold 12px/1.6 var(--ui);white-space:nowrap;background:var(--grey)}
+table.classic td{background:var(--paper)}
+table.classic td.when{width:1%;white-space:nowrap;font:12px/1.7 var(--ui);color:var(--navy)}
+
+.lang-row{display:grid;grid-template-columns:6.5em minmax(0,1fr);gap:10px;align-items:start;margin:0 0 8px}
+.lang-row b{padding-top:1px}
+.meter{height:18px;padding:3px;background:var(--paper);box-shadow:var(--sunken)}
+.meter span{display:block;height:100%;background:repeating-linear-gradient(90deg,var(--navy) 0 9px,transparent 9px 11px)}
+.lang-row small{display:block;margin-top:2px;font:11px/1.4 var(--ui)}
+
+.figure{display:block;max-width:440px;margin:12px 0 4px;padding:6px;background:var(--paper);box-shadow:var(--sunken)}
+.figure svg{display:block;width:100%;height:auto}
+.figure figcaption{margin:6px 2px 0;font:12px/1.45 var(--arial)}
+
+.new{position:relative;z-index:0;display:inline-grid;place-items:center;width:46px;height:46px;margin:-14px 0 -14px 4px;vertical-align:middle;
+  font:900 11px/1 var(--arial);font-style:normal;color:var(--hot);transform:rotate(-12deg);animation:wobble 1.4s ease-in-out infinite}
+.new::before,.new::after{content:"";position:absolute;inset:9px;background:var(--caution);z-index:-1}
+.new::after{transform:rotate(45deg)}
+@keyframes wobble{50%{transform:rotate(6deg) scale(1.08)}}
+.blink{animation:blink 1s steps(2,start) infinite}
+@keyframes blink{to{visibility:hidden}}
+.spin{display:inline-block;width:1.6em;height:1.6em;border-radius:50%;text-align:center;vertical-align:middle;
+  font:bold 14px/1.6em var(--arial);color:var(--navy);
+  background:radial-gradient(circle at 35% 30%,var(--hi),var(--gold) 45%,var(--gold-dark) 100%);animation:spin 2.4s linear infinite}
+@keyframes spin{to{transform:rotateY(360deg)}}
+
+.linklist li{margin-bottom:8px}
+.linklist a{font-family:var(--mono);font-size:15px}
+
+/* ---------- 88x31 buttons ---------- */
+.badges{display:flex;flex-wrap:wrap;justify-content:center;gap:6px;margin:14px 0}
+.b88{flex:none;width:88px;height:31px;display:flex;overflow:hidden;border:1px solid var(--dark);
+  font:bold 8px/1.1 var(--ui);letter-spacing:.03em;text-transform:uppercase;text-decoration:none;color:var(--ink);background:var(--paper)}
+.b88 .l{width:30px;display:grid;place-items:center;font-size:9px;border-right:1px solid var(--dark)}
+.b88 .r{flex:1;display:grid;place-items:center;padding:0 2px;text-align:center}
+.b-html .l{background:var(--dark);color:var(--hi)}
+.b-html .r{background:var(--caution)}
+.b-notepad .l{background:var(--navy);color:var(--hi)}
+.b-notepad .r{color:var(--navy)}
+.b-800 .r{background:linear-gradient(180deg,var(--navy2),var(--navy));color:var(--hi)}
+.b-y2k .l{color:var(--green)}
+.b-y2k .r{background:var(--green);color:var(--hi)}
+.b-frames .r{background:repeating-linear-gradient(45deg,var(--red) 0 6px,var(--red2) 6px 12px);color:var(--hi);text-shadow:1px 1px 0 var(--dark)}
+.b-pinn .l{background:var(--dark);color:var(--led);font:bold 17px/1 var(--serif)}
+.b-pinn .r{background:var(--purple);color:var(--hi)}
+.b-route .r{background:linear-gradient(90deg,var(--caution) 0 50%,var(--sky) 50% 100%);font-size:9px}
+a.b88:visited{color:var(--ink)}
+.b-gb .r{background:var(--grey);box-shadow:var(--raised)}
+a.b88:hover .r{color:var(--hot)}
+
+/* ---------- footer ---------- */
+.footer{text-align:center;font:12px/1.6 var(--ui)}
+.footer p{margin:0 0 6px}
+
+/* ---------- sparkle cursor ---------- */
+.sparkle{position:fixed;z-index:100;margin:-9px 0 0 -5px;pointer-events:none;font:bold 18px/1 var(--arial);animation:sparkle .8s linear forwards}
+@keyframes sparkle{to{opacity:0;transform:translate(var(--dx,0),26px) scale(.4) rotate(160deg)}}
+
+/* ---------- phones: one column ---------- */
+@media (max-width:720px){
+  body{padding:10px 16px 24px}
+  table.layout,table.layout>tbody{display:block;width:100%}
+  table.layout>tbody>tr{display:flex;flex-direction:column}
+  td.side{display:contents}
+  .side-top{order:1}
+  td.content{order:2;display:block;width:100%}
+  .side-bottom{order:3}
+  .nav{display:grid;grid-template-columns:1fr 1fr;gap:6px 10px}
+  .nav li{margin:0}
+  .photo-frame img,.photo-frame svg{width:120px}
+  .tagline{font-size:13px}
+  .tagline .sep{display:none}
+  .br-phone{display:inline}
+  .form-grid{grid-template-columns:minmax(0,1fr);gap:4px}
+  .form-grid .top{padding-top:0}
+  .form-grid input,.form-grid select,.form-grid textarea{margin-bottom:6px}
+}
+
+@media (prefers-reduced-motion:reduce){
+  .blink,.new,.spin,.tape{animation:none}
+}
+</style>
+</head>
+<body>
+<a id="top"></a>
+<noscript><div class="noscript">Your browser does not support JavaScript! The hit counter and guestbook need it, but everything else works fine.</div></noscript>
+
+<div id="page">
+
+<!-- ======================= MASTHEAD ======================= -->
+<header class="masthead">
+  <p class="welcome"><span class="blink" aria-hidden="true">*</span> Welcome to my Homepage on the World Wide Web! <span class="blink" aria-hidden="true">*</span></p>
+  <h1 class="wordart">Jan Balayla Ceres</h1>
+  <p class="tagline"><span class="nw">Mathematical Engineering</span> <span class="nw">in Data Science</span> <span class="nw">@ UPF Barcelona</span><br><span class="nw">Informatics @ TUM Munich</span><span class="sep"> &nbsp;|&nbsp; </span><br class="br-phone"><span class="nw">IT Operations @ QuantumDiamonds</span></p>
+</header>
+
+<div class="ticker">
+  <marquee id="ticker" scrollamount="5" onmouseover="this.stop()" onmouseout="this.start()">+++ WELCOME TO MY HOMEPAGE! +++ NEW: I started my Bachelor's thesis on physics-informed neural networks for scramjet intakes +++ Studying at UPF Barcelona and TUM Munich +++ IT Operations at QuantumDiamonds +++ Sign my guestbook before you go! +++</marquee>
+</div>
+
+<!-- ======================= MAIN TABLE ======================= -->
+<table class="layout" role="presentation">
+<tr>
+
+<!-- ~~~~~~~~~~ left column ~~~~~~~~~~ -->
+<td class="side">
+  <div class="side-top">
+
+    <div class="panel photo">
+      <div class="photo-frame">
+        <span id="me-ph" hidden>
+          <svg viewBox="0 0 150 190" width="150" height="190" role="img" aria-label="Photo coming soon">
+            <rect width="150" height="190" fill="#9db4d8"></rect>
+            <circle cx="75" cy="70" r="32" fill="#4a5a78"></circle>
+            <path d="M16 190c0-44 27-72 59-72s59 28 59 72z" fill="#4a5a78"></path>
+            <rect y="164" width="150" height="26" fill="#000080"></rect>
+            <text x="75" y="181" text-anchor="middle" font-family="Verdana, Tahoma, sans-serif" font-size="10" font-weight="bold" fill="#ffffff">PHOTO COMING SOON!</text>
+          </svg>
+        </span>
+        <img id="me" src="me.jpg" width="150" height="190" alt="Photo of Jan Balayla Ceres" onerror="this.hidden=true;document.getElementById('me-ph').hidden=false">
+      </div>
+      <p class="photo-caption">That's me!</p>
+    </div>
+
+    <div class="panel">
+      <p class="panel-title">Navigation</p>
+      <ul class="nav">
+        <li><a href="#about">About Me</a></li>
+        <li><a href="#news">What's New</a></li>
+        <li><a href="#experience">Experience</a></li>
+        <li><a href="#research">Research</a></li>
+        <li><a href="#education">Education</a></li>
+        <li><a href="#awards">Awards</a></li>
+        <li><a href="#skills">Skills</a></li>
+        <li><a href="#activities">Activities</a></li>
+        <li><a href="#links">Cool Links</a></li>
+        <li><a href="#guestbook">Guestbook</a></li>
+        <li><a href="#contact">Contact</a></li>
+        <li class="cv-only" hidden><a href="cv.pdf">My CV (PDF)</a></li>
+      </ul>
+    </div>
+
+  </div>
+  <div class="side-bottom">
+
+    <div class="panel">
+      <p class="panel-title">Hit Counter</p>
+      <div class="panel-body center">
+        <p>You have visited this page</p>
+        <p><span class="counter" id="counter" role="img" aria-label="1 visit"><span>0</span><span>0</span><span>0</span><span>0</span><span>0</span><span>1</span></span></p>
+        <p><span id="visit-word">time</span>! Come back soon.</p>
+      </div>
+    </div>
+
+    <div class="panel">
+      <p class="panel-title">Fun Stuff</p>
+      <div class="panel-body center">
+        <p><button class="btn" type="button" id="sparkle-btn" aria-pressed="false">Sparkle cursor: OFF</button></p>
+        <p>Background MIDI music: <b>off</b><br><small>(you're welcome)</small></p>
+      </div>
+    </div>
+
+    <div class="panel">
+      <p class="panel-title">Webring</p>
+      <div class="panel-body center">
+        <p>The <b>Jan Balayla Ceres</b> Webring<br><small>(1 member and counting)</small></p>
+        <p>[<a href="#about" id="ring-prev">&lt;&lt; Prev</a>] [<a href="#about" id="ring-next">Next &gt;&gt;</a>]<br>[<a href="#about" id="ring-rand">Random site</a>]</p>
+      </div>
+    </div>
+
+    <div class="panel construction">
+      <div class="tape" aria-hidden="true"></div>
+      <div class="construction-sign">
+        <svg viewBox="0 0 28 32" aria-hidden="true"><path d="M11 2h6l7 25H4z" fill="#ff7a00"></path><path d="M9.3 10h9.4l1.4 5H7.9zM7 18.5h14l1.4 5H5.6z" fill="#ffffff"></path><rect x="1" y="27" width="26" height="4" fill="#c04000"></rect></svg>
+        <span>UNDER<br>CONSTRUCTION</span>
+        <svg viewBox="0 0 28 32" aria-hidden="true"><path d="M11 2h6l7 25H4z" fill="#ff7a00"></path><path d="M9.3 10h9.4l1.4 5H7.9zM7 18.5h14l1.4 5H5.6z" fill="#ffffff"></path><rect x="1" y="27" width="26" height="4" fill="#c04000"></rect></svg>
+      </div>
+      <div class="tape" aria-hidden="true"></div>
+      <p class="panel-body"><small>This site is always under construction. Pardon our dust!</small></p>
+    </div>
+
+  </div>
+</td>
+
+<!-- ~~~~~~~~~~ right column ~~~~~~~~~~ -->
+<td class="content">
+
+<!-- ABOUT -->
+<section class="section" id="about">
+  <h2 class="bar">About Me</h2>
+  <p>Hi, and thanks for stopping by my little corner of the Internet! I'm <b>Jan</b>, a curious and hardworking student who absolutely loves tackling challenges. Life has taken me to live in three different countries, and each one has added something unique to my journey.</p>
+  <p>I study <b>Mathematical Engineering in Data Science</b> at Universitat Pompeu Fabra in Barcelona and <b>Informatics</b> at the Technical University of Munich. I'm deeply interested in using data and programming to solve real-world problems, especially in health and technology. Right now I'm writing my Bachelor's thesis on <a href="#research">physics-informed neural networks for scramjet intake design</a>.</p>
+  <p>Outside of class I co-founded the <b>UPF Engineering Hub</b>, I tutor high school students in math and science, and I volunteer with <b>KIDS Barcelona</b> at Sant Joan de D&eacute;u Hospital, bringing young people's perspectives into medical research.</p>
+  <p class="sub">Quick facts about me:</p>
+  <div class="tablewrap">
+    <table class="classic">
+      <tr><th scope="row">Name</th><td>Jan Balayla Ceres</td></tr>
+      <tr><th scope="row">Home base</th><td>Barcelona, Catalonia, Spain &amp; Munich, Germany</td></tr>
+      <tr><th scope="row">Studying</th><td>BSc Mathematical Engineering in Data Science (UPF)<br>BSc Informatics (TUM)</td></tr>
+      <tr><th scope="row">Grade</th><td>9.14 / 10 at UPF, second highest in my cohort</td></tr>
+      <tr><th scope="row">Working at</th><td>QuantumDiamonds (IT Operations) and Liverbula (Automation)</td></tr>
+      <tr><th scope="row">Languages</th><td>Spanish, Catalan, English, French</td></tr>
+      <tr><th scope="row">E-mail</th><td>janbacer [at] gmail [dot] com</td></tr>
+    </table>
+  </div>
+</section>
+
+<!-- WHAT'S NEW -->
+<section class="section" id="news">
+  <h2 class="bar">What's New?</h2>
+  <div class="tablewrap">
+    <table class="classic">
+      <tr><th scope="col">Date</th><th scope="col">Update</th></tr>
+      <tr><td class="when">Sep 2026</td><td>Started my Bachelor's thesis at UPF: <i>Physics-Informed Neural Networks for Scramjet Intake Design</i>. <span class="new"><span>NEW!</span></span></td></tr>
+      <tr><td class="when">Apr 2026</td><td>Joined QuantumDiamonds in Munich as IT Operations Admin (part-time).</td></tr>
+      <tr><td class="when">2025</td><td>Started my BSc in Informatics at the Technical University of Munich.</td></tr>
+      <tr><td class="when">May 2025</td><td>Started as Automation Engineer at Liverbula and covered a full-time Math &amp; Technology teaching post at CIC Batxillerats.</td></tr>
+      <tr><td class="when">Mar 2025</td><td>Guided future engineering students for UPF at the Sal&oacute; de l'Ensenyament.</td></tr>
+      <tr><td class="when">Jun 2024</td><td>Co-founded the UPF Engineering Hub.</td></tr>
+      <tr><td class="when">2023</td><td>Started my degree at Universitat Pompeu Fabra and began private tutoring.</td></tr>
+    </table>
+  </div>
+</section>
+
+<!-- EXPERIENCE -->
+<section class="section" id="experience">
+  <h2 class="bar">Work Experience</h2>
+
+  <div class="entry">
+    <div class="entry-head"><h3>IT Operations Admin <small>(part-time)</small></h3><span class="entry-when">Apr 2026 - Present</span></div>
+    <p class="entry-where"><a href="https://qd-st.com/">QuantumDiamonds GmbH</a>, Munich, Germany</p>
+    <p>QuantumDiamonds is a novel equipment vendor from Germany which builds novel magnetic field imaging systems based on quantum sensors, used to inspect advanced semiconductor chips.</p>
+    <ul class="balls">
+      <li>Own the IT backbone of a fast-growing deep-tech company: device management, network infrastructure, identity and security.</li>
+      <li>Lead tool evaluations and company-wide rollouts end to end, automating operations to keep every system reliable and available.</li>
+    </ul>
+  </div>
+
+  <div class="entry">
+    <div class="entry-head"><h3>Automation Engineer</h3><span class="entry-when">May 2025 - Present</span></div>
+    <p class="entry-where">Liverbula S.L., Barcelona</p>
+    <ul class="balls">
+      <li>Automated workflows to comply with Spanish Patent Agency standards.</li>
+      <li>Improved document accessibility by applying Optical Character Recognition (OCR) to scanned PDFs.</li>
+    </ul>
+  </div>
+
+  <div class="entry">
+    <div class="entry-head"><h3>Board and Founding Member</h3><span class="entry-when">Jun 2024 - Present</span></div>
+    <p class="entry-where">UPF Engineering Hub, Barcelona</p>
+    <ul class="balls">
+      <li>Organize events, talks and hackathons that connect students with engineering and tech, together with companies such as Oracle, Amazon, Revolut, Estrella Damm and Seidor.</li>
+      <li>Handle logistics, sponsorship acquisition, communication and student-industry engagement.</li>
+    </ul>
+  </div>
+
+  <div class="entry">
+    <div class="entry-head"><h3>Private Tutor &amp; Substitute Teacher</h3><span class="entry-when">Sep 2023 - Present</span></div>
+    <p class="entry-where">Mathematics, Physics, Chemistry &amp; Technology, Barcelona</p>
+    <ul class="balls">
+      <li>Give tailored support to high school students, adapting to each student with clear explanations, problem-solving strategies and exam preparation, which improves their results.</li>
+      <li>In May 2025 I was selected to cover a full-time Mathematics &amp; Technology teaching post at CIC Batxillerats, teaching up to 8 hours a day to classes of more than 30 final-year students preparing for university entrance.</li>
+      <li>Designed and delivered every session myself, from preparation to master-class lectures with live Q&amp;A.</li>
+    </ul>
+  </div>
+
+  <div class="entry">
+    <div class="entry-head"><h3>Student Informer, Sal&oacute; de l'Ensenyament</h3><span class="entry-when">Mar 2025</span></div>
+    <p class="entry-where">Universitat Pompeu Fabra, Barcelona</p>
+    <ul class="balls">
+      <li>Guided future students of the UPF School of Engineering, sharing my experience as a current student and answering questions about the degree, university life and career opportunities.</li>
+    </ul>
+  </div>
+</section>
+
+<!-- RESEARCH -->
+<section class="section" id="research">
+  <h2 class="bar">Research</h2>
+
+  <div class="entry">
+    <div class="entry-head"><h3>Bachelor's Thesis <span class="new"><span>NEW!</span></span></h3><span class="entry-when">Sep 2026 - Present</span></div>
+    <p class="entry-where">Universitat Pompeu Fabra, Barcelona</p>
+    <p><b><i>Physics-Informed Neural Networks for Scramjet Intake Design</i></b></p>
+    <ul class="balls">
+      <li>Developing physics-informed neural networks in PyTorch that learn supersonic flow from the governing equations alone, and optimize the intake geometry through automatic differentiation.</li>
+      <li>Built the reference CFD pipeline (Gmsh, SU2 with MPI, ParaView), validated against exact shock theory with less than 1% error.</li>
+    </ul>
+    <figure class="figure">
+      <svg viewBox="0 0 420 170" role="img" aria-labelledby="fig1-title" font-family="Arial, Helvetica, sans-serif">
+        <title id="fig1-title">Diagram: Mach 5 flow meets a 10 degree compression ramp and turns through an oblique shock wave</title>
+        <defs>
+          <pattern id="hatch" width="7" height="7" patternUnits="userSpaceOnUse" patternTransform="rotate(45)">
+            <rect width="7" height="7" fill="#c0c0c0"></rect>
+            <rect width="2" height="7" fill="#808080"></rect>
+          </pattern>
+          <marker id="arrowhead" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto">
+            <path d="M0 0L10 5L0 10z" fill="#0000aa"></path>
+          </marker>
+        </defs>
+        <rect width="420" height="170" fill="#ffffff"></rect>
+        <text x="14" y="28" font-size="15" font-weight="bold" fill="#000000">M = 5</text>
+        <g stroke="#0000aa" stroke-width="2" marker-end="url(#arrowhead)">
+          <line x1="14" y1="50" x2="100" y2="50"></line>
+          <line x1="14" y1="78" x2="100" y2="78"></line>
+          <line x1="14" y1="106" x2="100" y2="106"></line>
+        </g>
+        <text x="14" y="128" font-size="11" fill="#000000">free stream</text>
+        <polygon points="0,140 170,140 420,95.9 420,170 0,170" fill="url(#hatch)"></polygon>
+        <line x1="170" y1="140" x2="300" y2="140" stroke="#000000" stroke-width="1" stroke-dasharray="4 3"></line>
+        <path d="M230 140A60 60 0 0 0 229.09 129.58" fill="none" stroke="#000000" stroke-width="1.5"></path>
+        <polyline points="0,140 170,140 420,95.9" fill="none" stroke="#000000" stroke-width="2.5"></polyline>
+        <line x1="170" y1="140" x2="420" y2="51.95" stroke="#d00000" stroke-width="3"></line>
+        <line x1="296" y1="108.5" x2="364" y2="96.5" stroke="#0000aa" stroke-width="2" marker-end="url(#arrowhead)"></line>
+        <rect x="238" y="146" width="66" height="17" fill="#ffffff" stroke="#000000"></rect>
+        <text x="271" y="159" text-anchor="middle" font-size="12" fill="#000000">&#952; = 10&#176;</text>
+        <text x="414" y="22" text-anchor="end" font-size="13" font-weight="bold" fill="#d00000">oblique shock</text>
+        <text x="414" y="38" text-anchor="end" font-size="12" fill="#000000">&#946; &#8776; 19.4&#176;</text>
+        <line x1="398" y1="42" x2="404" y2="56" stroke="#d00000" stroke-width="1"></line>
+      </svg>
+      <figcaption>Fig. 1: Mach 5 flow hits a 10&deg; ramp and turns through an oblique shock. Exact shock theory puts the shock at about 19.4&deg;, the kind of answer my CFD pipeline is checked against.</figcaption>
+    </figure>
+  </div>
+
+  <div class="entry">
+    <div class="entry-head"><h3>Publication</h3></div>
+    <p>&ldquo;Young patients&rsquo; involvement in a composite endpoint method development on acceptability for paediatric oral dosage forms.&rdquo;</p>
+  </div>
+</section>
+
+<!-- EDUCATION -->
+<section class="section" id="education">
+  <h2 class="bar">Education</h2>
+
+  <div class="entry">
+    <div class="entry-head"><h3>BSc in Informatics</h3><span class="entry-when">2025 - Present</span></div>
+    <p class="entry-where"><a href="https://www.tum.de/">Technical University of Munich (TUM)</a>, Munich, Germany</p>
+    <ul class="balls">
+      <li><b>Relevant coursework:</b> Internship in Parallel Programming and HPC, Fundamentals of AI, Data Mining, Data Analysis, Deep Learning, Emerging Computing Technologies.</li>
+    </ul>
+  </div>
+
+  <div class="entry">
+    <div class="entry-head"><h3>BSc in Mathematical Engineering in Data Science</h3><span class="entry-when">2023 - Present</span></div>
+    <p class="entry-where"><a href="https://www.upf.edu/">Universitat Pompeu Fabra (UPF)</a>, Barcelona, Spain</p>
+    <ul class="balls">
+      <li><b>Grade: 9.14 / 10</b>, second highest in my cohort.</li>
+      <li><b>Relevant coursework:</b> Calculus, Statistics, Physics, Algorithm Design, Network Science, Artificial Intelligence, Machine Learning, Computer Graphics, Optimization Techniques, Data Structures.</li>
+      <li><b>Activities:</b> founding board member of the Engineering Hub, robot referee at the First Lego League, university 10 km running team, hackathon representative.</li>
+    </ul>
+    <p><b>12 Highest Honors distinctions</b> (Matr&iacute;cula d'Honor) in:</p>
+    <ul class="balls cols">
+      <li>Discrete Mathematics</li>
+      <li>Data Structures and Algorithms II</li>
+      <li>Networks</li>
+      <li>Numerical Methods</li>
+      <li>Physics</li>
+      <li>Object-Oriented Programming</li>
+      <li>Graph Analysis</li>
+      <li>Operating Systems</li>
+      <li>Computer Graphics</li>
+      <li>Algorithm Design</li>
+      <li>Optimization Techniques</li>
+      <li>Machine Learning</li>
+    </ul>
+  </div>
+
+  <div class="entry">
+    <div class="entry-head"><h3>High School Diploma (Batxillerat), Technological Itinerary</h3><span class="entry-when">2021 - 2023</span></div>
+    <p class="entry-where">CIC Batxillerats, Barcelona, Spain</p>
+    <ul class="balls">
+      <li><b>Grade: 9.2 / 10</b></li>
+      <li>1st Place, International Mathematical Kangaroo (out of 102,000 participants).</li>
+      <li>5th Place, Chemical Olympiad of Catalonia.</li>
+      <li>Collaborative tech project with MIT.</li>
+    </ul>
+  </div>
+
+  <div class="entry">
+    <div class="entry-head"><h3>High School, Grade 9</h3><span class="entry-when">2019 - 2020</span></div>
+    <p class="entry-where">Monarch Park Collegiate, Toronto, Canada</p>
+    <ul class="balls">
+      <li>Subject Award, Principles of Math.</li>
+      <li>MVP, YMCA Basketball League, Toronto.</li>
+    </ul>
+  </div>
+
+  <div class="entry">
+    <div class="entry-head"><h3>Secondary Education (ESO)</h3><span class="entry-when">2017 - 2021</span></div>
+    <p class="entry-where">Thau Barcelona, Barcelona, Spain</p>
+  </div>
+</section>
+
+<!-- AWARDS -->
+<section class="section" id="awards">
+  <h2 class="bar">Awards &amp; Honors</h2>
+  <ul class="stars">
+    <li><b>1st Place</b>, International Mathematical Kangaroo (SCM), out of 102,000 participants.</li>
+    <li><b>Second highest grade in my cohort</b> at UPF (9.14 / 10), with 12 Highest Honors distinctions.</li>
+    <li><b>5th Place</b>, Chemical Olympiad of Catalonia.</li>
+    <li><b>First Prize</b>, First Lego League.</li>
+    <li><b>Scientific Promises Contest</b></li>
+    <li><b>Subject Award</b>, Principles of Math, Monarch Park Collegiate, Toronto.</li>
+    <li><b>Most Valuable Player (MVP)</b>, YMCA Basketball League for Kids, Central YMCA, Toronto (2019-2020, 1st semester).</li>
+  </ul>
+</section>
+
+<!-- SKILLS -->
+<section class="section" id="skills">
+  <h2 class="bar">Skills &amp; Languages</h2>
+
+  <p class="sub">Languages</p>
+  <div class="lang-row"><b>Spanish</b><div><div class="meter"><span style="width:100%"></span></div><small>Native</small></div></div>
+  <div class="lang-row"><b>Catalan</b><div><div class="meter"><span style="width:100%"></span></div><small>Native</small></div></div>
+  <div class="lang-row"><b>English</b><div><div class="meter"><span style="width:100%"></span></div><small>Native, C2 Proficiency (Cambridge Assessment)</small></div></div>
+  <div class="lang-row"><b>French</b><div><div class="meter"><span style="width:50%"></span></div><small>Intermediate</small></div></div>
+
+  <p class="sub">Technical</p>
+  <ul class="balls">
+    <li><b>Machine learning:</b> deep learning and physics-informed neural networks with PyTorch.</li>
+    <li><b>Scientific computing:</b> CFD with Gmsh, SU2 and ParaView; parallel programming and HPC with MPI.</li>
+    <li><b>Data:</b> data analysis, data mining, statistics, optimization and network science.</li>
+    <li><b>Automation:</b> workflow automation and OCR for document processing.</li>
+    <li><b>IT operations:</b> device management, network infrastructure, identity and security.</li>
+  </ul>
+
+  <p class="sub">Teaching</p>
+  <p>Teaching, teacher training and university teaching, backed by three years of tutoring and full-time substitute teaching.</p>
+
+  <p class="sub">Certifications</p>
+  <ul class="balls">
+    <li>C2 Proficiency in English, Cambridge Assessment</li>
+  </ul>
+</section>
+
+<!-- ACTIVITIES -->
+<section class="section" id="activities">
+  <h2 class="bar">Volunteering &amp; Activities</h2>
+  <ul class="balls">
+    <li><b>Volunteer, KIDS Barcelona</b> at Sant Joan de D&eacute;u Hospital, bringing young people's perspectives into medical research.</li>
+    <li><b>Founding board member</b> of the UPF Engineering Hub.</li>
+    <li><b>Robot referee</b> at the First Lego League (FLL).</li>
+    <li><b>Hackathon representative</b> for UPF.</li>
+    <li><b>Runner</b> on the university 10 km running team.</li>
+    <li><b>Basketball:</b> MVP of the YMCA league for kids in Toronto.</li>
+  </ul>
+</section>
+
+<!-- LINKS -->
+<section class="section" id="links">
+  <h2 class="bar">Cool Links</h2>
+  <p>Some places on the Web I visit a lot:</p>
+  <ul class="balls linklist">
+    <li><a href="https://www.tum.de/">http://www.tum.de/</a><br>Technical University of Munich, where I study Informatics.</li>
+    <li><a href="https://www.upf.edu/">http://www.upf.edu/</a><br>Universitat Pompeu Fabra, my university in Barcelona.</li>
+    <li><a href="https://qd-st.com/">http://qd-st.com/</a><br>QuantumDiamonds, where I work in IT Operations.</li>
+    <li><a href="https://pytorch.org/">http://pytorch.org/</a><br>PyTorch, the deep learning library behind my thesis.</li>
+    <li><a href="https://su2code.github.io/">http://su2code.github.io/</a><br>SU2, the open-source CFD suite I use for reference simulations.</li>
+    <li><a href="https://gmsh.info/">http://gmsh.info/</a><br>Gmsh, for meshing.</li>
+    <li><a href="https://www.paraview.org/">http://www.paraview.org/</a><br>ParaView, for looking at flow fields.</li>
+    <li><a href="https://www.linkedin.com/in/janbalayla">http://www.linkedin.com/in/janbalayla</a><br>My LinkedIn profile.</li>
+  </ul>
+</section>
+
+<!-- GUESTBOOK -->
+<section class="section" id="guestbook">
+  <h2 class="bar">Guestbook</h2>
+  <p>Please sign my guestbook! Your entry is sent to me by e-mail, and I read every single one.</p>
+  <form id="gb">
+    <fieldset>
+      <legend>Sign my Guestbook!</legend>
+      <div class="form-grid">
+        <label for="gb-name">Your name:</label>
+        <input type="text" id="gb-name" name="name" required maxlength="80" autocomplete="name">
+        <label for="gb-email">Your e-mail:</label>
+        <input type="email" id="gb-email" name="email" maxlength="120" autocomplete="email" placeholder="(optional)">
+        <label for="gb-home">Your homepage:</label>
+        <input type="text" id="gb-home" name="homepage" maxlength="200" inputmode="url" placeholder="http://">
+        <label for="gb-found">How did you find my page?</label>
+        <select id="gb-found" name="found">
+          <option>A search engine</option>
+          <option>LinkedIn</option>
+          <option>A friend told me</option>
+          <option>The webring</option>
+          <option>Pure luck</option>
+        </select>
+        <label for="gb-msg" class="top">Comments:</label>
+        <textarea id="gb-msg" name="message" rows="5" required maxlength="2000"></textarea>
+      </div>
+      <div class="form-actions">
+        <button class="btn" type="submit">Sign Guestbook</button>
+        <button class="btn" type="reset">Reset</button>
+      </div>
+      <p class="status" id="gb-status" role="status" hidden></p>
+    </fieldset>
+  </form>
+</section>
+
+<!-- CONTACT -->
+<section class="section" id="contact">
+  <h2 class="bar">Contact Me</h2>
+  <div class="tablewrap">
+    <table class="classic">
+      <tr><th scope="row">E-mail</th><td><span class="spin" aria-hidden="true">@</span> <a data-mail href="#contact">janbacer [at] gmail [dot] com</a></td></tr>
+      <tr><th scope="row">LinkedIn</th><td><a href="https://www.linkedin.com/in/janbalayla">http://www.linkedin.com/in/janbalayla</a></td></tr>
+      <tr><th scope="row">Location</th><td>Barcelona, Catalonia, Spain &amp; Munich, Germany</td></tr>
+      <tr class="cv-only" hidden><th scope="row">CV</th><td><a href="cv.pdf">Download my CV (PDF)</a></td></tr>
+      <tr><th scope="row">ICQ</th><td>Just kidding. E-mail or LinkedIn work best!</td></tr>
+    </table>
+  </div>
+</section>
+
+</td>
+</tr>
+</table>
+
+<!-- ======================= FOOTER ======================= -->
+<hr class="fat">
+<footer class="footer">
+  <div class="badges">
+    <span class="b88 b-html"><span class="l">HTML</span><span class="r">100% hand<br>coded</span></span>
+    <span class="b88 b-notepad"><span class="l">.TXT</span><span class="r">Made with<br>Notepad</span></span>
+    <span class="b88 b-800"><span class="r">Best viewed<br>800 x 600</span></span>
+    <span class="b88 b-y2k"><span class="l">Y2K</span><span class="r">Compliant</span></span>
+    <span class="b88 b-frames"><span class="r">No frames<br>No Flash</span></span>
+    <span class="b88 b-pinn"><span class="l">&#8706;</span><span class="r">Physics<br>informed</span></span>
+    <span class="b88 b-route"><span class="r">BCN &#8644; MUC</span></span>
+    <a class="b88 b-gb" href="#guestbook"><span class="r">Sign my<br>guestbook!</span></a>
+  </div>
+  <p>This page is best viewed with Netscape Navigator 4.0 or Internet Explorer 5.5 at 800x600.<br>(Any browser from this decade works too.)</p>
+  <p>Last updated: <span id="updated">October 2, 2026</span></p>
+  <p>&copy; 2026 Jan Balayla Ceres. All rights reserved. | Webmaster: <a data-mail href="#contact">Jan</a></p>
+  <p><a href="#top">[ Back to top ]</a></p>
+</footer>
+
+</div>
+
+<script>
+(function () {
+  "use strict";
+  var reduceMotion = !!(window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches);
+
+  /* --- e-mail address, assembled here so spam bots can't read it from the page --- */
+  var addr = ["janbacer", "gmail.com"].join("@");
+  Array.prototype.forEach.call(document.querySelectorAll("[data-mail]"), function (a) {
+    a.href = "mailto:" + addr;
+  });
+
+  /* --- hit counter: counts visits from this browser --- */
+  var visits = 1;
+  try {
+    visits = (parseInt(localStorage.getItem("jbc-visits"), 10) || 0) + 1;
+    localStorage.setItem("jbc-visits", String(visits));
+  } catch (e) { /* storage blocked: show 1 */ }
+  var digits = String(visits);
+  while (digits.length < 6) digits = "0" + digits;
+  var counter = document.getElementById("counter");
+  counter.textContent = "";
+  for (var i = 0; i < digits.length; i++) {
+    var d = document.createElement("span");
+    d.textContent = digits.charAt(i);
+    counter.appendChild(d);
+  }
+  counter.setAttribute("aria-label", visits + (visits === 1 ? " visit" : " visits"));
+  document.getElementById("visit-word").textContent = visits === 1 ? "time" : "times";
+
+  /* --- "last updated" comes from the server's file date --- */
+  var mod = new Date(document.lastModified);
+  if (!isNaN(mod.getTime())) {
+    document.getElementById("updated").textContent =
+      mod.toLocaleDateString("en-US", { year: "numeric", month: "long", day: "numeric" });
+  }
+
+  /* --- the ticker holds still for people who prefer less motion --- */
+  var marquee = document.getElementById("ticker");
+  if (reduceMotion && marquee) {
+    var still = document.createElement("div");
+    still.className = "static";
+    still.textContent = marquee.textContent;
+    marquee.parentNode.replaceChild(still, marquee);
+  }
+
+  /* --- webring: hops between the sections of this page --- */
+  var ring = ["about", "news", "experience", "research", "education", "awards", "skills", "activities", "links", "guestbook", "contact"];
+  var pos = 0;
+  function go(n) {
+    pos = (n + ring.length) % ring.length;
+    var el = document.getElementById(ring[pos]);
+    if (el) el.scrollIntoView({ behavior: reduceMotion ? "auto" : "smooth", block: "start" });
+  }
+  function bind(id, fn) {
+    var el = document.getElementById(id);
+    if (el) el.addEventListener("click", function (e) { e.preventDefault(); fn(); });
+  }
+  bind("ring-prev", function () { go(pos - 1); });
+  bind("ring-next", function () { go(pos + 1); });
+  bind("ring-rand", function () {
+    var r;
+    do { r = Math.floor(Math.random() * ring.length); } while (r === pos);
+    go(r);
+  });
+
+  /* --- sparkle cursor (off until you ask for it) --- */
+  var sparkleOn = false, lastSpark = 0;
+  var colors = ["#ff0000", "#ff9900", "#ffee00", "#00cc00", "#0066ff", "#cc00ff"];
+  var sparkleBtn = document.getElementById("sparkle-btn");
+  sparkleBtn.addEventListener("click", function () {
+    sparkleOn = !sparkleOn;
+    sparkleBtn.textContent = "Sparkle cursor: " + (sparkleOn ? "ON" : "OFF");
+    sparkleBtn.setAttribute("aria-pressed", String(sparkleOn));
+  });
+  document.addEventListener("pointermove", function (e) {
+    if (!sparkleOn) return;
+    var now = Date.now();
+    if (now - lastSpark < 40) return;
+    lastSpark = now;
+    var s = document.createElement("span");
+    s.className = "sparkle";
+    s.textContent = "*";
+    s.setAttribute("aria-hidden", "true");
+    s.style.left = e.clientX + "px";
+    s.style.top = e.clientY + "px";
+    s.style.color = colors[Math.floor(Math.random() * colors.length)];
+    s.style.setProperty("--dx", Math.round(Math.random() * 30 - 15) + "px");
+    document.body.appendChild(s);
+    setTimeout(function () { s.remove(); }, 800);
+  });
+
+  /* --- guestbook: hands the entry to the visitor's e-mail program --- */
+  var form = document.getElementById("gb");
+  var status = document.getElementById("gb-status");
+  function val(id) { return document.getElementById(id).value.trim(); }
+  form.addEventListener("submit", function (e) {
+    e.preventDefault();
+    var name = val("gb-name");
+    var body = [
+      "Name: " + name,
+      "E-mail: " + (val("gb-email") || "(not given)"),
+      "Homepage: " + (val("gb-home") || "(none)"),
+      "Found the page via: " + document.getElementById("gb-found").value,
+      "",
+      val("gb-msg"),
+      "",
+      "(Signed via the guestbook on Jan's homepage)"
+    ].join("\r\n");
+    window.location.href = "mailto:" + addr +
+      "?subject=" + encodeURIComponent("Guestbook entry from " + name) +
+      "&body=" + encodeURIComponent(body);
+    status.textContent = "Thanks for signing, " + name + "! Your e-mail program should open with your entry ready to send. " +
+      "If nothing happens, write to me at janbacer [at] gmail [dot] com.";
+    status.hidden = false;
+  });
+  form.addEventListener("reset", function () { status.hidden = true; });
+
+  /* --- show the CV link only if cv.pdf sits next to this page --- */
+  if (/^https?:$/.test(location.protocol) && window.fetch) {
+    fetch("cv.pdf", { method: "HEAD" }).then(function (r) {
+      if (!r.ok) return;
+      Array.prototype.forEach.call(document.querySelectorAll(".cv-only"), function (el) { el.hidden = false; });
+    }).catch(function () {});
+  }
+})();
+</script>
+</body>
+</html>
